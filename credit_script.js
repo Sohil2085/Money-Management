@@ -1,4 +1,4 @@
-const array1 = JSON.parse(localStorage.getItem("array11")) || [{name: '',amount: ,notes: ''}];
+const array1 = JSON.parse(localStorage.getItem("array11")) || [{name: 'SK',amount: 10,notes: 'ASDFF'}];
 
 // Restrict amount input to numbers only
 document.querySelector(".amount-input").addEventListener("input", function () {
