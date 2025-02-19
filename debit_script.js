@@ -1,4 +1,4 @@
-const array = JSON.parse(localStorage.getItem("array")) || [];
+const array = JSON.parse(localStorage.getItem("array")) || [{name: 'Sohil',amount: 1000,notes: 'Anything'}];
 
 // Restrict amount input to numbers only
 document.querySelector(".amount-input").addEventListener("input", function () {
@@ -9,11 +9,12 @@ function renderInformation() {
     let dataHtml = '';
 
     for (let index = 0; index < array.length; index++) {
-        const element = array[index];
+        const elementObject = array[index];
+        const {name , amount , notes} = elementObject;
 
         const html = `
         <p>
-            <span>${element[0]} - <span id="amount-${index}">${element[1]}</span> Rupees</span>
+            ${name} ${amount} ${notes}
             <button onclick="editAmount(${index})">Edit</button>
             <button onclick="removeEntry(${index})">Remove</button>
         </p>
@@ -29,9 +30,11 @@ function input() {
     const amount = document.querySelector('.amount-input');
     const nameText = name.value.trim();
     const amountValue = amount.value.trim();
+    const note = document.querySelector('.js-notes');
+    const notesText = note.value.trim();
 
-    if (nameText === "" || amountValue === "") {
-        alert("Please enter both Name and Amount");
+    if (nameText === "" || amountValue === "" || notesText === "") {
+        alert("Please enter Name, Amount");
         return;
     }
     if (isNaN(amountValue)) {
@@ -39,11 +42,12 @@ function input() {
         return;
     }
 
-    array.push([nameText, parseFloat(amountValue)]);
+    array.push({name: nameText,amount: parseFloat(amountValue),notes: notesText});
     localStorage.setItem("array", JSON.stringify(array));
 
     name.value = '';
     amount.value = '';
+    note.value = '';
     renderInformation();
 }
 
@@ -53,7 +57,6 @@ function removeEntry(index) {
     renderInformation();
 }
 
-// ✅ Function to Edit Amount (Only Numbers Allowed)
 function editAmount(index) {
     let newAmount = prompt("Enter new amount:", array[index][1]);
 
