@@ -1,48 +1,50 @@
 /* General Page Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    background: linear-gradient(135deg, #6c6c6c, #a1a1a1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    color: #333;
+    color: #fff;
 }
 
 /* Title Styling */
 h1 {
-    font-size: 2rem;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
 }
 
-/* Input and Button Container */
+/* Input and Button Styling */
 input, button {
-    padding: 12px;
+    padding: 12px 15px;
     margin: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     outline: none;
 }
 
 input {
-    width: 250px;
-    background: #f8f9fa;
-    border: 2px solid #ddd;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     transition: 0.3s;
+    color: #333;
 }
 
 input:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Button Styling */
 button {
-    background: #4facfe;
+    background: #5c5c5c;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -50,36 +52,76 @@ button {
 }
 
 button:hover {
-    background: #00c6ff;
+    background: #3c3c3c;
 }
 
 /* Displaying Data */
 .js-output {
     margin-top: 20px;
-    width: 320px;
-    max-height: 300px;
+    width: 340px;
+    max-height: 350px;
     overflow-y: auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .js-output p {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    color: #333;
 }
 
 .js-output button {
-    background: red;
-    padding: 5px 10px;
+    background: #ff4d4d;
+    padding: 6px 12px;
     font-size: 14px;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .js-output button:hover {
-    background: darkred;
+    background: #cc0000;
+}
+
+/* Index Page Styling */
+.index-container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.index-container a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 18px;
+    background: #2d2b2c;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.index-container a:hover {
+    background: #4e484a;
+}
+
+/* Credit and Debit Page Containers */
+.credit-container, .debit-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
 }
